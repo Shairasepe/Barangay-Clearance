@@ -8,7 +8,7 @@
 	
 	
 	
-	$db = mysqli_connect('localhost', 'root', '', 'registration');
+	$db = mysqli_connect('localhost', 'root', '', 'clearance');
 	
 	if (isset($_POST['register'])) {
 		$username = mysqli_real_escape_string($db,$_POST['username']);
