@@ -4,15 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>phonebook</title>
-	<link rel="stylesheet" type="text/css"	href="style.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<title>Barangay Clearance</title>
 </head>
 <body>
 
   
 	<header class="main">
-	<center><h1 class="col-sm-4">PHONEBOOK</h1></center>
+	<center><h1 class="col-sm-4">PERSON</h1></center>
     <div class="row">
      <nav class="col-sm-1 text-left"> 
 
@@ -21,8 +19,7 @@
 		 <?php endif ?>
 		 
 		 <?php if(isset($_SESSION["username"])): ?>
-		     <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-		      <p><a href="index.php?logout='1'" style="color:white;">Logout</a></p>
+		    
 		 <?php endif ?> 
 
       </nav>
@@ -46,11 +43,26 @@
 			<label>lastname</label>
 			<input type="text" name="lastname" class="form-control" value="<?php echo $lastname;?>"placeholder="Enter your lastname">
 		</div>
-		<div class="form-group">
-			<label>contact no.</label>
-			<input type="text" name="contact" class="form-control" value="<?php echo $contact;?>"placeholder="Enter your contact no.">
+			<div class="form-group">
+			<label>status</label>
+			<input type="text" name="status" class="form-control" value="<?php echo $status;?>"placeholder="Enter your status">
 		</div>
 		<div class="form-group">
+			<label>address</label>
+			<input type="text" name="address" class="form-control" value="<?php echo $address;?>"placeholder="Enter your address">
+		</div>
+		<div class="form-group">
+			<label>birthdate</label>
+			<input type="date" name="birthdate" class="form-control" value="<?php echo $birthdate;?>"placeholder="Enter your birthdate">
+		</div>
+		<div class="form-group">
+			<label>barangay_id</label>
+			<input type="number" name="barangay_id" class="form-control" value="<?php echo $barangay_id;?>"placeholder="Enter your barangay_id">
+		</div>
+		<div class="form-group">
+			<label>staff_id</label>
+			<input type="number" name="staff_id" class="form-control" value="<?php echo $staff_id;?>"placeholder="Enter your staff_id">
+		</div>
 		<?php 
 			if($update==true):
 		?>
