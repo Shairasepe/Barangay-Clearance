@@ -4,17 +4,11 @@
 <html lang="en">
 <head>
 	<title>Barangay Clearance</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<style>
-		body{
-			  background-image: url(ss.jpg);
-		}
-		</style>
+	
 </head>
 <body>
 	<header class="main">
-	<center><h1 class="col-sm-12">BARANGAY LOWER LOBOC</h1></center>
+	<center><h1 class="col-sm-12">BARANGAY CLEARANCE</h1></center>
 	<center><h2>CITY OF OROQUIETA</h2></center>
     <div class="row">
      <nav class="col-sm-8 text-right"> 
@@ -56,7 +50,6 @@
 		</form>
 		</div>
 		</div>
-		<center><img src ="sai.jpg" width="260" height ="250"></</center>
     </div>
 		
 		
