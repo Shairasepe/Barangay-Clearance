@@ -9,17 +9,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Phonebook</title>
-	
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-
+	<title>Barangay Clearance</title>
 </head>
 <body>
 
 
 <header class="main">
-    <center><h1 class="col-sm-4">PHONEBOOK</h1></center>
+    <center><h1 class="col-sm-4">BARANGAY CLEARANCE</h1></center>
     <div class="row">
      <nav class="col-sm-8 text-right"> 
 
@@ -32,8 +28,8 @@
 	<form>
 
 		<p>
-		<h1>Welcome to Phonebook</h1>
-		Create your own contact list 
+		<h1>Welcome</h1>
+		
 		</p>  
 
           <?php if (isset($_SESSION['success'])): ?>
@@ -41,11 +37,10 @@
 		 <?php endif ?>
 		 
 		 <?php if(isset($_SESSION["username"])): ?>
-		     <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
-		      <p><a href="index.php?logout='1'" style="color:white;">Logout</a></p>
+		    
 		 <?php endif ?> 
 
-		<a href="add.php" class="btn">View Contact</a>
+		<a href="add.php" class="btn">View</a>
 		<a href="register.php" class="btn">Back</a>
 
 
