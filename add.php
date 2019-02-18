@@ -3,15 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>phonenbook</title>
-	<link rel="stylesheet" type="text/css"	href="style.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<title>Barangay Clearance</title>
+	
 </head>
 <body>
 
 
 	<header class="main">
-	<center><h1 class="col-sm-4">PHONEBOOK</h1></center>
+	<center><h1 class="col-sm-4">BARANGAY CLEARANCE</h1></center>
     <div class="row">
      <nav class="col-sm-1 text-left"> 
 
@@ -20,7 +19,7 @@
 		 <?php endif ?>
 		 
 		 <?php if(isset($_SESSION["username"])): ?>
-		     <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong></p>
+		    
 		      <p><a href="index.php?logout='1'" style="color:white;">Logout</a></p>
 		 <?php endif ?> 
 
@@ -50,7 +49,7 @@
 	<?php endif ?>
 	<div class="container">
 	<?php
-		$mysqli = new mysqli('localhost','root','','registration') or die(mysqli_error($mysqli));
+		$mysqli = new mysqli('localhost','root','','clearance') or die(mysqli_error($mysqli));
 		$username= $_SESSION["username"];
 		$result=$mysqli->query("select id from users where username='$username'") or die($mysqli->error);
 		if(@count($result)==1)
@@ -59,7 +58,7 @@
 			$userid=$row['id'];
 
 		}
-		$result = $mysqli->query("SELECT * FROM data where userid='$userid'") or die($mysqli->error);
+		$result = $mysqli->query("SELECT * FROM staff where userid='$userid'") or die($mysqli->error);
 		//pre_r($result);
 		
 		?>
@@ -68,13 +67,18 @@
 				
 			
 				<thead>
-					<center><p><h1 style="color: white;">Contact List</h1></p></center><br>
+					<center><p><h1 style="color: white;">Clearance List</h1></p></center><br>
 					
 	                <br><br><br>
 					<tr>
 						<th>firstname</th>
 						<th>lastname</th>
-						<th>contact no.</th>
+						<th>status</th>
+						<th>address</th>
+						<th>birthdate</th>
+						<th>barangay id</th>
+						<th>staff id</th>
+						
 						<th colspan="2">Action</th>
 					</tr>
 				</thead>
@@ -85,7 +89,12 @@
 						<tr>
 							<td><?php echo $row['firstname']?></td>
 							<td><?php echo $row['lastname']?></td>
-							<td><?php echo $row['contact']?></td>
+							<td><?php echo $row['status']?></td>
+							<td><?php echo $row['address']?></td>
+							<td><?php echo $row['birthdate']?></td>
+							<td><?php echo $row['barangay_id']?></td>
+							<td><?php echo $row['staff_id']?></td>
+							
 							<td>
 								<a href="edit.php?edit=<?php echo $row['id'];?>"
 									class="btn">Edit</a>
@@ -106,7 +115,7 @@
 	
 	?>
 
-	<a href="edit.php"class="btn">Add Contact</a>
+	<a href="edit.php"class="btn">Add Person</a>
 	                <a href="index.php"class="btn">Back</a>
 	
 </body>
