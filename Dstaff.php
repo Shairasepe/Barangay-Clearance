@@ -1,6 +1,6 @@
 <?php
 
-  require 'config.php';
+ require 'config.php';
 
   $contact_id = $_GET['delete_id'];
   $delete= "Delete from staff where staff_id = ".$contact_id;
