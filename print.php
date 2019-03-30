@@ -65,5 +65,6 @@
 			<center><input class="btn btn-primary" type="button" onclick="window.print()" value="Print page"/>
 			<a href ="Lclearance.php"><input class="btn" type="button" id="list_btn" value="Back"/><br></a>
 
+				
 </body>
 </html>
