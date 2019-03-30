@@ -8,7 +8,6 @@
             $err = 'Invalid username/password';
         }
  ?>
-
 <!DOCTYPE html>
 <html>
 <center>
