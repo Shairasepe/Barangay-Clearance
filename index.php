@@ -16,7 +16,7 @@
 						<br><a href ="loginstaff.php"><input class="btn" type="button" id="list_btn" value="LOGIN STAFF"/></br></a>
 
 
-  		</center>
+  	</center>
  </body>
  </html>
 
