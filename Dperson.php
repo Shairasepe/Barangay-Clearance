@@ -3,7 +3,7 @@
   require 'config.php';
 
   $contact_id = $_GET['delete_id'];
-  $delete= "Delete from persons where id = ".$contact_id;
+  $delete= "Delete from person where persons_id = ".$contact_id;
   if (mysqli_query($con, $delete)) {
     header('location: Lperson.php');
   }else {

@@ -1,15 +1,18 @@
 <?php
   session_start();
   require 'config.php';
+  $sql = "SELECT * FROM barangay
+		 WHERE barangay.barangay_id = barangay.barangay_id";
   if(isset($_POST['save'])){
-    $id = $_POST['id'];
-    $first_name = $_POST['first_name'];
-    $middle_name = $_POST['middle_name'];
-    $last_name = $_POST['last_name'];
+    $captain_id = $_POST['captain_id'];
+    $firstname = $_POST['firstname'];
+    $middlename = $_POST['middlename'];
+    $lastname = $_POST['lastname'];
+	$barangay_id = $_POST['barangay_id'];
 
 
 	
-    $insert_information = "INSERT INTO  `captain`(`id`, `first_name`, `middle_name`, `last_name` ) VALUES ('$id','$first_name', '$middle_name','$last_name')";
+    $insert_information = "INSERT INTO  `captain`(`captain_id`, `firstname`, `middlename`, `lastname`, `barangay_id`) VALUES ('$captain_id','$firstname', '$middlename','$lastname','$barangay_id')";
     
     if (mysqli_query($con, $insert_information)) {
       echo"
@@ -42,29 +45,42 @@
   			<div class="form-row">
     			<div class="col-md-4 md-3">
 	      			<label for="validationCustom04">ID_NO</label>
-	      			<input type="number" name="id" class="form-control" id="validationCustom01" placeholder="id number"  required>
+	      			<input type="number" name="captain_id" class="form-control" id="validationCustom01" placeholder="captain_id"  required>
     			</div>
   				<div class="col-md-4 mb-3">
 				      <label for="validationCustom03">FIRST NAME:</label>
-				      <input type="text" name="first_name" class="form-control"  id="validationCustom05" placeholder="First Name"  required>
+				      <input type="text" name="firstname" class="form-control"  id="validationCustom05" placeholder="firstname"  required>
     			</div>
     			<div class="col-md-4 md-3">
 	      			<label for="validationCustom04">MIDDLE NAME</label>
-	      			<input type="text" name="middle_name" class="form-control" id="validationCustom01" placeholder="Middle name"  required>
+	      			<input type="text" name="middlename" class="form-control" id="validationCustom01" placeholder="middlename"  required>
     			</div>
     		</div>
     			<center><div class="col-md-4 md-3">
 	      			<label for="validationCustom05">LAST NAME:</label>
-	      			<input type="text" name="last_name" class="form-control" id="validationCustom01" placeholder="Last name"  required>
+	      			<input type="text" name="lastname" class="form-control" id="validationCustom01" placeholder="lastname"  required>
     			</div>
-    		</div>			
+    		</div>	
+				 <br>BARANGAY ID:
+		            <?php 
+		            	include "config.php";
+		            	$sql = "SELECT * FROM barangay";
+		            	$res = mysqli_query($con, $sql);
+		            ?> 
+		            <select name= "barangay_id" value="<?php echo $information['barangay_id']?>" required>
+		            	<option value=""></option>
+		            <?php while ($line = mysqli_fetch_array($res)){ ?>
+		            	<option value="<?php echo $line['barangay_id']; ?>"><?php echo $line[1] ?></option>
+		            <?php } ?>
+		            </select>
+						</br>
 		
 			
 
 			
     			<br><form class="myform" method="post">
-				            <input type="submit" name ="save" class="btn" id="save_btn" value="Save"/>
-				            <a href ="Lcaptain.php"><input class="btn" type="button" id="list_btn" value="Record"/><br></a></br></center>
+				            <input type="submit" name ="save" class="btn btn-success" id="save_btn" value="Save"/>
+				            <a href ="Lcaptain.php"><input class="btn btn-success" type="button" id="list_btn" value="Record"/><br></a></br></center>
   				</form>
 		</form>
 </body>

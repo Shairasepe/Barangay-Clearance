@@ -2,14 +2,14 @@
   session_start();
   require 'config.php';
   if(isset($_POST['save'])){
-    $id = $_POST['id'];
+    $cedula_id = $_POST['cedula_id'];
     $date = $_POST['date'];
     $amount = $_POST['amount'];
     $place = $_POST['place'];
 
 
 	
-    $insert_information = "INSERT INTO  `cedula`(`id`, `date`, `amount`, `place` ) VALUES ('$id','$date', '$amount','$place')";
+    $insert_information = "INSERT INTO  `cedula`(`cedula_id`, `date`, `amount`, `place` ) VALUES ('$cedula_id','$date', '$amount','$place')";
     
     if (mysqli_query($con, $insert_information)) {
       echo"
@@ -42,7 +42,7 @@
   			<div class="form-row">
     			<div class="col-md-4 md-3">
 	      			<label for="validationCustom01">CEDULA_NO:</label>
-	      			<input type="number" name="id" class="form-control" id="validationCustom01" placeholder="cedula number" required>
+	      			<input type="number" name="cedula_id" class="form-control" id="validationCustom01" placeholder="cedula_id" required>
     			</div>
   				<div class="col-md-4 mb-3">
 				      <label for="validationCustom01">DATE:</label>
@@ -63,8 +63,8 @@
 
 			
     			<br><form class="myform" method="post">
-				            <input type="submit" name ="save" class="btn" id="save_btn" value="Save"/>
-				            <a href ="Lcedula.php"><input class="btn" type="button" id="list_btn" value="Record"/><br></a></br>
+				            <input type="submit" name ="save" class="btn btn-success" id="save_btn" value="Save"/>
+				            <a href ="Lcedula.php"><input class="btn btn-success" type="button" id="list_btn" value="Record"/><br></a></br>
 						</center>
   				</form>
 		</form>

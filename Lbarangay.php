@@ -16,14 +16,17 @@ require 'config.php';
 		}
 		</style>
 <body>
-
-<center> 
-		<h1>BARANGAY RECORD</h1>
+ 
+		<center><h1>BARANGAY RECORD</h1></center>
+		<a href ="index.php"><input class="btn btn-danger btn-lg" type="button" id="list_btn" value="LOGOUT"/></a>
         <table class="table table-dark">
 	  <thead>
       	<tr>
+		<br>
       		<th scope="col">ID_NO</th>
       		<th scope="col">BARANGAY NAME</th>
+			<th scope="col">OPERATION</th>
+		</br>
       	</tr>
 		</thead>
 	       	<?php
@@ -31,18 +34,17 @@ require 'config.php';
       			echo "<tr>";?>
 
 						<tr>
-							<td><?php echo $information['id']?></td>
+							<td><?php echo $information['barangay_id']?></td>
 							<td><?php echo $information['barangay_name']?></td>
 
 
 							<td>
-							<a href="Dbarangay.php?delete_id=<?php echo $information['id']; ?>">Delete</i></a>
+							<a href="Dbarangay.php?delete_id=<?php echo $information['barangay_id']; ?>">Delete</i></a>
 						</td>
 						<td>
-							<a href="Ebarangay.php?edit_id=<?php echo $information['id']; ?>">Edit</i></a>
+							<a href="Ebarangay.php?edit_id=<?php echo $information['barangay_id']; ?>">Edit</i></a>
 						</td>
 					</tr>
-</center>
 
 					</tr>
     	<?php
@@ -50,8 +52,7 @@ require 'config.php';
       	?>
       	</table>
       					<center><br><a href ="Abarangay.php"><input class="btn" type="button" id="list_btn" value="ADD barangay"/></br></a>
-      					<br><a href ="index.php"><input class="btn" type="button" id="list_btn" value="HOME"/></br></a>						
-						<br><a href ="login.php"><input class="btn" type="button" id="list_btn" value="LOGOUT"/></a></br></center>
+						<br><a href ="admin.php"><input class="btn" type="button" id="list_btn" value="HOME"/></a></br></center>
 
 						
 </body>

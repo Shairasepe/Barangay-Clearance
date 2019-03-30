@@ -16,15 +16,18 @@ require 'config.php';
 		}
 		</style>
 <body>
-<center>
-	  <h1>CEDULA RECORD</h1>
+	  <center><h1>CEDULA RECORD</h1></center>
+	  <a href ="index.php"><input class="btn btn-danger btn-lg" type="button" id="list_btn" value="LOGOUT"/></a>
      <table class="table table-dark">
 	  <thead>
       <tr>
+	  <br>
       		<th scope="col">CEDULA NUMBER</th>
       		<th scope="col">DATE</th>
       		<th scope="col">AMOUNT</th>
       		<th scope="col">PLACE</th>
+			<th scope="col">OPERATION</th>
+		</br>
       	</tr>
 		</thead>
 	       	<?php
@@ -32,28 +35,26 @@ require 'config.php';
       			echo "<tr>";?>
 
 						<tr>
-							<td><?php echo $information['id']?></td>
+							<td><?php echo $information['cedula_id']?></td>
 							<td><?php echo $information['date']?></td>
 							<td><?php echo $information['amount']?></td>
 							<td><?php echo $information['place']?></td>
 
 							<td>
-							<a href="Dcedula.php?delete_id=<?php echo $information['id']; ?>">Delete</i></a>
+							<a href="Dcedula.php?delete_id=<?php echo $information['cedula_id']; ?>">Delete</i></a>
 						</td>
 						<td>
-							<a href="Ecedula.php?edit_id=<?php echo $information['id']; ?>">Edit</i></a>
+							<a href="Ecedula.php?edit_id=<?php echo $information['cedula_id']; ?>">Edit</i></a>
 						</td>
 					</tr>
-</center>
 
 					</tr>
     	<?php
     		}
       	?>
       	</table>
-      					<center><br><a href ="Acedula.php"><input class="btn" type="button" id="list_btn" value="ADD CEDULA"/></br></a>
-      					<br><a href ="index.php"><input class="btn" type="button" id="list_btn" value="HOME"/></br></a>						
-						<br><a href ="login.php"><input class="btn" type="button" id="list_btn" value="LOGOUT"/></a></br></center>
+      					<center><br><a href ="Acedula.php"><input class="btn" type="button" id="list_btn" value="ADD CEDULA"/></br></a>				
+						<br><a href ="staff.php"><input class="btn" type="button" id="list_btn" value="HOME"/></a></br></center>
 						
 </body>
 </html>
