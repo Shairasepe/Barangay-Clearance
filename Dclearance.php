@@ -1,5 +1,6 @@
 <?php
 
+
   require 'config.php';
 
   $contact_id = $_GET['delete_id'];
