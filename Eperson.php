@@ -33,6 +33,7 @@
       }
         
 ?>
+
 <!DOCTYPE html>
 <html>
 	<title>BarangayClearance</title>
