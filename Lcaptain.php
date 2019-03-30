@@ -6,6 +6,7 @@ require 'config.php';
 
 ?>
 
+
 <!DOCTYPE html>
 <html>
 	<title>BarangayClearance</title>
