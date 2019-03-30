@@ -1,7 +1,7 @@
 <?php
 
 
-  require 'config.php';
+ require 'config.php';
 
   $contact_id = $_GET['delete_id'];
   $delete= "Delete from clearance where clearance_id = ".$contact_id;
