@@ -1,11 +1,10 @@
 <?php
 session_start();
 require 'config.php';
-	$sql = "SELECT * FROM person, barangay, cedula, captain, staff, clearance WHERE person.persons_id = person.persons_id AND barangay.barangay_id = barangay.barangay_id AND cedula.cedula_id = cedula.cedula_id AND captain.captain_id = captain.captain_id AND staff.staff_id = staff.staff_id AND person.persons_id =clearance.persons_id AND barangay.barangay_id=clearance.barangay_id AND captain.captain_id=clearance.captain_id AND staff.staff_id=clearance.staff_id";
+	$sql = "SELECT * FROM person, barangay, cedula, captain, staff, clearance WHERE person.persons_id = clearance.persons_id AND barangay.barangay_id = clearance.barangay_id AND cedula.cedula_id = clearance.cedula_id AND captain.captain_id = clearance.captain_id AND staff.staff_id = clearance.staff_id AND person.persons_id = clearance.persons_id";
 	$records=mysqli_query($con,$sql);
 
 ?>
-
 
 <!DOCTYPE html>
 <html>
